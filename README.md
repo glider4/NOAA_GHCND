@@ -15,6 +15,7 @@ Highly recommended, at least skim it.   [CLICK LINK TO SEE .TXT FILE](./data/tex
 For an overview on converting the `ghcnd-all.tar.gz` dataset to .csv, 
 [see my other repo by clicking here](https://github.com/mathemacode/NOAA_GHCND_IMPORT).
 
+### Project scope
 Complete:
 - convert NOAA's .txt fact files into .csv (fixed-width, using Pandas)
 - fact file imports into Postgres database using COPY
@@ -28,4 +29,8 @@ Need to add to this ReadMe:
 - use of sed & stat error
 - query performance (20 min down to 5!)
 
+### Database Schema - PostgreSQL
 ![ERD](./vis/NOAA_GHCND_ERD.png)
+
+### GSN Max & Min Temp Records (USA) 1925-2019
+![gsn-usa](./vis/USA_min_max_GSN.png)
