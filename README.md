@@ -8,8 +8,7 @@ Complete:
 - convert NOAA's .txt fact files into .csv (fixed-width, using Pandas)
 - fact file imports into Postgres database using COPY
 - SQL script to build Postgres DB, tables for fact files
-
-TODO:
 - ERD
 - Postgres import of full dataset
-- Spark integration
+
+![ERD](./vis/NOAA_GHCND_ERD.png)
