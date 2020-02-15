@@ -1,5 +1,6 @@
 -- Create average columns for full months where data is available
 -- Find average ELEMENT for certain year from a certain place (state or country)
+-- Can also filter by other flags/elements if desired
 
 WITH main_CTE AS
 (
@@ -9,11 +10,10 @@ FROM obs
 INNER JOIN Stations USING(StationID)
 INNER JOIN Countries USING(CountryAbbr)
 WHERE Element IN('TMAX')
-	AND StateAbbr = 'FL'
+	--AND StateAbbr = 'FL'
 	--AND CountryAbbr = 'US'
 	AND gsn_flag = 'GSN'
 ),
-
 
 
 average_CTE AS 
@@ -97,7 +97,8 @@ FROM permonth_CTE
 GROUP BY year
 )
 
--- Only use data that has a full 12-month average
+
+-- Only use data that has a full 12-months to average
 -- Convert to C, not tenths of C
 SELECT year, (average_yearly/10) AS avg_yearly FROM peryear_CTE
 WHERE num_months = 12
