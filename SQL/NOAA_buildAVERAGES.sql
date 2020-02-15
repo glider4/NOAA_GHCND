@@ -3,7 +3,7 @@
 
 WITH main_CTE AS
 (
-SELECT stationid, stationname, stateabbr, month, year, v1,v2,v3,v4,v5,v6,v7,v8,
+SELECT stationid, stateabbr, month, year, v1,v2,v3,v4,v5,v6,v7,v8,
 		v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,v23,v24,v25,v26,v27,v28,v29,v30,v31
 FROM obs
 INNER JOIN Stations USING(StationID)
@@ -20,7 +20,7 @@ average_CTE AS
 
 (
 -- 31 day months
-SELECT stationid, stationname, stateabbr, month, year,
+SELECT stationid, month, year,
 	((v1+v2+v3+v4+v5+v6+v7+v8+v9+v10+v11+v12+v13+v14+v15+v16+v17+
 	  v18+v19+v20+v21+v22+v23+v24+v25+v26+v27+v28+v29+v30+v31)/31) AS month_avg
 FROM main_CTE
@@ -33,7 +33,7 @@ UNION ALL
 	
 (
 -- 30 day months
-SELECT stationid, stationname, stateabbr, month, year,
+SELECT stationid, month, year,
 	((v1+v2+v3+v4+v5+v6+v7+v8+v9+v10+v11+v12+v13+v14+v15+v16+v17+
 	  v18+v19+v20+v21+v22+v23+v24+v25+v26+v27+v28+v29+v30)/30) AS month_avg
 FROM main_CTE
@@ -46,7 +46,7 @@ UNION ALL
 
 (
 -- February, 28 days, NOT leap years
-SELECT stationid, stationname, stateabbr, month, year,
+SELECT stationid, month, year,
 	((v1+v2+v3+v4+v5+v6+v7+v8+v9+v10+v11+v12+v13+v14+v15+v16+v17+
 	  v18+v19+v20+v21+v22+v23+v24+v25+v26+v27+v28)/28) AS month_avg
 FROM main_CTE
@@ -60,7 +60,7 @@ UNION ALL
 
 (
 -- February, 29 days, leap years
-SELECT stationid, stationname, stateabbr, month, year,
+SELECT stationid, month, year,
 	((v1+v2+v3+v4+v5+v6+v7+v8+v9+v10+v11+v12+v13+v14+v15+v16+v17+
 	  v18+v19+v20+v21+v22+v23+v24+v25+v26+v27+v28+v29)/29) AS month_avg
 FROM main_CTE
