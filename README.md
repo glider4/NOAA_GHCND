@@ -6,6 +6,11 @@ data readily available to query for all locations on a range of granularity leve
 provides free access to this data which is updated on a daily basis.  Using Python and SQL 
 to convert the files to .csv and then build a database for querying.
 
+LINK TO DATA FILES - download "ghcnd_all.tar.gz" --> ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily
+
+### Read the doc about data structure, contents, etc.
+Highly recommended, at least skim it.   [CLICK LINK TO SEE .TXT FILE](./data/text_files/DataInfo_readme.txt)
+
 ### Converting `.dly` files to `.csv`
 For an overview on converting the `ghcnd-all.tar.gz` dataset to .csv, 
 [see my other repo by clicking here](https://github.com/mathemacode/NOAA_GHCND_IMPORT).
