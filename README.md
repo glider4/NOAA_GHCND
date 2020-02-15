@@ -1,13 +1,14 @@
 # NOAA GHCN-D
-#### NOAA Global Historical Climate Network - Daily
+### Conversion, ingestion, PostgreSQL database build, querying
  
 Objective of this project: Make NOAA's Global Historical Climatalogy Network Daily (GHCN-D)
 data readily available to query for all locations on a range of granularity levels.  NOAA 
 provides free access to this data which is updated on a daily basis.  Using Python and SQL 
 to convert the files to .csv and then build a database for querying.
 
-For an overview on converting the `ghcnd-all.tar.gz` dataset to .csv, see my other repo:
-https://github.com/mathemacode/NOAA_GHCND_IMPORT
+### Converting `.dly` files to `.csv`
+For an overview on converting the `ghcnd-all.tar.gz` dataset to .csv, 
+[see my other repo by clicking here](https://github.com/mathemacode/NOAA_GHCND_IMPORT).
 
 Complete:
 - convert NOAA's .txt fact files into .csv (fixed-width, using Pandas)
