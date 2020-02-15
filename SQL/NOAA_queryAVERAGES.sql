@@ -8,9 +8,10 @@ SELECT stationid, stateabbr, month, year, v1,v2,v3,v4,v5,v6,v7,v8,
 FROM obs
 INNER JOIN Stations USING(StationID)
 INNER JOIN Countries USING(CountryAbbr)
-WHERE Element IN('TMIN')
-	AND StateAbbr = 'FL'
-	--AND CountryAbbr = 'US'
+WHERE Element IN('TMAX')
+	--StateAbbr = 'FL'
+	AND CountryAbbr = 'US'
+	AND gsn_flag = 'GSN'
 ),
 
 
