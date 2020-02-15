@@ -9,8 +9,8 @@ FROM obs
 INNER JOIN Stations USING(StationID)
 INNER JOIN Countries USING(CountryAbbr)
 WHERE Element IN('TMAX')
-	--StateAbbr = 'FL'
-	AND CountryAbbr = 'US'
+	AND StateAbbr = 'FL'
+	--AND CountryAbbr = 'US'
 	AND gsn_flag = 'GSN'
 ),
 
