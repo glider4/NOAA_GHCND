@@ -11,23 +11,31 @@ LINK TO DATA FILES - download "ghcnd_all.tar.gz" --> ftp://ftp.ncdc.noaa.gov/pub
 ### Read the doc about data structure, contents, etc.
 Highly recommended, at least skim it.   [CLICK LINK TO SEE .TXT FILE](./data/text_files/DataInfo_readme.txt)
 
-### Converting `.dly` files to `.csv`
+### Converting `.dly` files to `.csv` and upload to Postgres Database
 For an overview on converting the `ghcnd-all.tar.gz` dataset to .csv, 
-[see my other repo by clicking here](https://github.com/mathemacode/NOAA_GHCND_IMPORT).
+[see my other repo by clicking here](https://github.com/mathemacode/NOAA_GHCND_IMPORT).  This
+guide also includes information about uploading this dataset into a Postgres database, which
+can then be used in conjunction with the SQL queries in [the SQL folder](./SQL).
 
 ### Project scope
 Complete:
-- convert NOAA's .txt fact files into .csv (fixed-width, using Pandas)
-- fact file imports into Postgres database using COPY
+- Convert NOAA's .txt fact files into .csv (fixed-width, using Pandas)
+- Fact file imports into Postgres database using COPY
 - SQL script to build Postgres DB, tables for fact files
-- ERD
-- Postgres import of full dataset
-- optimized queries for entire country yearly averages
+- Entity-Relationship Diagram / ERD below
+- Postgres import of full dataset (roughly 25gb after `.csv` conversion)
+- Optimized queries for entire country yearly averages
 
 Need to add to this ReadMe:
-- intro to NOAA, the data, limitations, etc
-- use of sed & stat error
-- query performance (20 min down to 5!)
+- Intro to NOAA, the data, limitations, etc
+- Use of sed & stat error
+- Query performance (20 min down to 5!)
+- Main query explanation (`buildAVERAGES.sql`)
+
+TODO Coding:
+- Spark implementation
+- Queries for #-year averages (of all stations or GSN, etc.)
+- Further query performance optimization
 
 ### Database Schema - PostgreSQL
 ![ERD](./vis/NOAA_GHCND_ERD.png)
