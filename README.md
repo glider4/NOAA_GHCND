@@ -25,6 +25,8 @@ Complete:
 - Entity-Relationship Diagram / ERD below
 - Postgres import of full dataset (roughly 25gb after `.csv` conversion)
 - Optimized queries for entire country yearly averages
+- Exported GSN-station-only data to `.csv`
+- Ingested GSN-station-only data into Apache Spark
 
 Need to add to this ReadMe:
 - Intro to NOAA, the data, limitations, etc
@@ -33,7 +35,6 @@ Need to add to this ReadMe:
 - Main query explanation (`buildAVERAGES.sql`)
 
 TODO Coding:
-- Spark implementation
 - Queries for #-year averages (of all stations or GSN, etc.)
 - Further query performance optimization
 
