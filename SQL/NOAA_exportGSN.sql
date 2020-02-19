@@ -7,4 +7,4 @@ COPY (
 	WHERE gsn_flag = 'GSN'
 	)
 
-TO 'D:/ghcnd-GSNonly.csv' (FORMAT CSV, DELIMITER(','));
+TO 'D:/ghcnd-GSNonly.csv' (FORMAT CSV, DELIMITER(','), HEADER);
