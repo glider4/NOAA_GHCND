@@ -65,7 +65,7 @@ REFERENCES COUNTRIES(CountryAbbr);
 
 -- Check data was imported properly, try some simple queries/joins
 SELECT * FROM STATIONS
-WHERE stationstate = 'FL';
+WHERE StateAbbr = 'FL';
 
 SELECT StationNum, StationID, StationName, Elevation, StateAbbr, StateLong
 FROM Stations
