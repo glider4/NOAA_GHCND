@@ -145,6 +145,10 @@ SELECT * FROM OBS
 WHERE SF2 = '-9999'
 LIMIT 10;
 
+ALTER TABLE OBS
+ADD CONSTRAINT obs_fkey1
+FOREIGN KEY (StationID) REFERENCES STATIONS(StationID);
+
 
 -- ONLY RUN BELOW UDPATES if sed command above was not run, and -9999 vals
 -- still exist in data
