@@ -149,7 +149,7 @@ CREATE TABLE OBS_GSN (
 
 -- Ingest data from exported .csv
 -- Use for testing comparison to Spark
-COPY OBS FROM 'D:/ghcnd-GSNonly.csv' (FORMAT CSV, DELIMITER(','), HEADER);
+COPY OBS_GSN FROM 'D:/ghcnd-GSNonly.csv' (FORMAT CSV, DELIMITER(','), HEADER);
 
 
 -- Check import
