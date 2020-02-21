@@ -1,4 +1,5 @@
 # Import average min and average max per YEAR based on GSN from GHCN-D
+# Plot result using ggplot
 
 library(dplyr)
 library(readr)
@@ -6,7 +7,6 @@ library(ggplot2)
 
 usamin <- read_csv("C:/Users/dell/Desktop/NOAA_DATA/usamin.csv", col_names = c('year', 'min_c'))
 usamax <- read_csv("C:/Users/dell/Desktop/NOAA_DATA/usamax.csv", col_names = c('year', 'max_c'))
-globalavg <- read_csv("C:/Users/dell/Desktop/NOAA_DATA/globalavg.csv", col_names = c('year', 'avg_c'))
 
 usa_all <- inner_join(usamin, usamax, by='year')
 usa_all <- filter(usa_all, usa_all$year >= 1925)
@@ -19,6 +19,10 @@ USAChart <- ggplot(usa_all, aes(x=year)) +
   ggtitle('Min and Max USA Temps from GSN')
 
 USAChart
+
+
+# Global average temps
+globalavg <- read_csv("C:/Users/dell/Desktop/NOAA_DATA/globalavg.csv", col_names = c('year', 'avg_c'))
 
 GlobalChart <- ggplot(filter(globalavg, globalavg$year >= 1925), aes(x=year)) + 
   geom_line(aes(y=avg_c), color='darkgreen') + 
