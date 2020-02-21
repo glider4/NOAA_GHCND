@@ -43,3 +43,6 @@ TODO Coding:
 
 ### GSN Max & Min Temp Records (USA) 1925-2019
 ![gsn-usa](./vis/USA_min_max_GSN.png)
+
+### GSN Average Temp Records (Global) 1925-2019
+![gsn-global](./vis/Global_AVG_GSN.png)
