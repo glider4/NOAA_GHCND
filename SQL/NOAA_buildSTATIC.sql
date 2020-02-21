@@ -7,8 +7,8 @@
 
 -- DROP TABLE STATIONS;
 CREATE TABLE STATIONS (
-	StationNum INTEGER PRIMARY KEY NOT NULL,
-	StationID CHAR(11) NOT NULL,
+	StationNum INTEGER NOT NULL,
+	StationID CHAR(11) PRIMARY KEY NOT NULL,
 	Latitude NUMERIC NOT NULL,
 	Longtitude NUMERIC NOT NULL,
 	Elevation NUMERIC NOT NULL,
@@ -38,15 +38,16 @@ CREATE TABLE INVENTORY (
 	Longtitude NUMERIC NOT NULL,
 	Element CHAR(4) NOT NULL,
 	BeginYear INTEGER,
-	EndYear INTEGER);
+	EndYear INTEGER,
+	FOREIGN KEY (StationID) REFERENCES STATIONS(StationID));
 	
 ----------------------------------------------------------
 
 -- CSV conversion done in Python: import data into staging tables using COPY
-COPY STATIONS FROM 'C:/Users/dell/Documents/GitHub/NOAA_BigData/data/ghcnd-stations.csv' (FORMAT CSV, DELIMITER(','));
-COPY STATES FROM 'C:/Users/dell/Documents/GitHub/NOAA_BigData/data/ghcnd-states.csv' (FORMAT CSV, DELIMITER(','));
-COPY COUNTRIES FROM 'C:/Users/dell/Documents/GitHub/NOAA_BigData/data/ghcnd-countries.csv' (FORMAT CSV, DELIMITER(','));
-COPY INVENTORY FROM 'C:/Users/dell/Documents/GitHub/NOAA_BigData/data/ghcnd-inventory.csv' (FORMAT CSV, DELIMITER(','));
+COPY STATIONS FROM 'C:/Users/dell/Documents/GitHub/NOAA_GHCND/data/ghcnd-stations.csv' (FORMAT CSV, DELIMITER(','));
+COPY STATES FROM 'C:/Users/dell/Documents/GitHub/NOAA_GHCND/data/ghcnd-states.csv' (FORMAT CSV, DELIMITER(','));
+COPY COUNTRIES FROM 'C:/Users/dell/Documents/GitHub/NOAA_GHCND/data/ghcnd-countries.csv' (FORMAT CSV, DELIMITER(','));
+COPY INVENTORY FROM 'C:/Users/dell/Documents/GitHub/NOAA_GHCND/data/ghcnd-inventory.csv' (FORMAT CSV, DELIMITER(','));
 
 -- Add in CountryAbbr based on StationID
 ALTER TABLE STATIONS
