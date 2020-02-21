@@ -5,6 +5,3 @@ ON STATIONS(CountryAbbr);
 
 CREATE INDEX countries_idx1
 ON Countries(CountryAbbr);
-
-CREATE INDEX inventory_idx1
-ON INVENTORY(StationID);
