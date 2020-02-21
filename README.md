@@ -26,7 +26,9 @@ Complete:
 - Postgres import of full dataset (roughly 25gb after `.csv` conversion)
 - Optimized queries for entire country yearly averages
 - Exported GSN-station-only data to `.csv`
-- Ingested GSN-station-only data into Apache Spark
+- Ingested GSN-station-only data into Apache Spark as Dataframe
+- Ingested GSN-station-only data back into PostgreSQL as a separate entity
+- Compared query execution times running on Spark SQL vs. PostgreSQL
 
 Need to add to this ReadMe:
 - Intro to NOAA, the data, limitations, etc
@@ -36,7 +38,8 @@ Need to add to this ReadMe:
 
 TODO Coding:
 - Queries for #-year averages (of all stations or GSN, etc.)
-- Further query performance optimization
+- Build dataset in Spark to use `lambda` functions
+- Check temperature **anomalies** with query for entire dataset on Postgres
 
 ### Database Schema - PostgreSQL
 ![ERD](./vis/NOAA_GHCND_ERD.png)
