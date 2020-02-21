@@ -145,6 +145,7 @@ SELECT * FROM OBS
 WHERE SF2 = '-9999'
 LIMIT 10;
 
+-- Add Foreign Key to OBS if rest of dataset built
 ALTER TABLE OBS
 ADD CONSTRAINT obs_fkey1
 FOREIGN KEY (StationID) REFERENCES STATIONS(StationID);
