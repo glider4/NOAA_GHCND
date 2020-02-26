@@ -137,6 +137,7 @@ CREATE TABLE OBS (
 -- Ingest data from Python .csv conversion result
 -- Used cygwin to remove "-9999" values that should be NULL
 -- sed -i -e 's/-9999//g' "ghcnd-all-no9999.csv"
+-- OR set null as -9999 in COPY line below
 COPY OBS FROM 'D:/ghcnd-all-no9999.csv' (FORMAT CSV, DELIMITER(','));
 
 
