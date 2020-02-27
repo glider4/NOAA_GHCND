@@ -1,5 +1,5 @@
 # NOAA GHCN-D
-### Conversion, ingestion, PostgreSQL database build, querying
+#### Conversion, ingestion, PostgreSQL database build, querying, Spark implementation, Scala
  
 Objective of this project: Make NOAA's Global Historical Climatalogy Network Daily (GHCN-D)
 data readily available to query for all locations on a range of granularity levels.  NOAA 
@@ -26,9 +26,11 @@ Complete:
 - Postgres import of full dataset (roughly 25gb after `.csv` conversion)
 - Optimized queries for entire country yearly averages
 - Exported GSN-station-only data to `.csv`
-- Ingested GSN-station-only data into Apache Spark as Dataframe
+- Ingested GSN-station-only data into Apache Spark as Dataframe using Python
 - Ingested GSN-station-only data back into PostgreSQL as a separate entity
 - Compared query execution times running on Spark SQL vs. PostgreSQL
+- Ingested GSN-station-only data into Apache Spark as DataSet using Scala
+- Mimicked SQL queries in Spark in Scala using `lambda` functions
 
 Need to add to this ReadMe:
 - Intro to NOAA, the data, limitations, etc
@@ -38,7 +40,6 @@ Need to add to this ReadMe:
 
 TODO Coding:
 - Queries for #-year averages (of all stations or GSN, etc.)
-- Build dataset in Spark to use `lambda` functions
 - Check temperature **anomalies** with query for entire dataset on Postgres
 
 ### Database Schema - PostgreSQL
