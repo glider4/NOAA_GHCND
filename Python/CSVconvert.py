@@ -38,11 +38,11 @@ countries.to_csv('C:/Users/dell/Documents/GitHub/NOAA_BigData/data/ghcnd-countri
 
 
 # Inventory data
-countries = pd.read_fwf('C:/Users/dell/Documents/GitHub/NOAA_BigData/data/text_files/ghcnd-inventory.txt',
+inventory = pd.read_fwf('C:/Users/dell/Documents/GitHub/NOAA_BigData/data/text_files/ghcnd-inventory.txt',
                 widths=[12,9,9,5,5,5], header=None)
 
 # Convert to csv for PG import
-countries.to_csv('C:/Users/dell/Documents/GitHub/NOAA_BigData/data/ghcnd-inventory.csv',
+inventory.to_csv('C:/Users/dell/Documents/GitHub/NOAA_BigData/data/ghcnd-inventory.csv',
                    sep=',', encoding='utf-8', header=None)
 
 #################################
