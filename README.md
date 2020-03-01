@@ -17,6 +17,16 @@ For an overview on converting the `ghcnd-all.tar.gz` dataset to .csv,
 guide also includes information about uploading this dataset into a Postgres database, which
 can then be used in conjunction with the SQL queries in [the SQL folder](./SQL).
 
+### Possible use cases
+This database hosts an extensive amount of climate records and individual characteristics that could prove
+useful to diverse research projects and study.  I have tried to make the process of setting this up as simple
+as possible to understand to benefit other researchers who want to work with it.  Some possible use cases:
+
+1. Subsetting this data for a certain region or set of stations to support research
+2. Querying this data for wind power research (best areas with steady, fast wind?)
+3. Querying this data for solar power research
+4. Tracking effects of climate change worldwide based on any characteristic (see doc about data contents)
+
 ### Project scope
 Complete:
 - Convert NOAA's .txt fact files into .csv (fixed-width, using Pandas)
