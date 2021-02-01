@@ -9,6 +9,7 @@ the data and uploaded it into DataBricks community edition using Python, then Sc
 functions.
 
 **LINK TO DATA FILES**: download "ghcnd_all.tar.gz" --> `ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily`
+Note as of Jan 2021: it appears the ftp link is no longer available, if so use `https://registry.opendata.aws/noaa-ghcn/`
 
 ### Read the doc about data structure, contents, etc.
 Highly recommended, at least skim it.   [CLICK LINK TO SEE .TXT FILE](./data/text_files/DataInfo_readme.txt)
